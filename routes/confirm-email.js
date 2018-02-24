@@ -2,10 +2,9 @@ import express from 'express';
 
 const router = express.Router();
 
-/* GET index page. */
 router.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Emails - Passport to College'
+  res.render('emails/confirm-email', {
+    title: 'Confirm Email Address - Emails - Passport to College'
   });
 });
 

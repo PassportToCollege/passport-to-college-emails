@@ -6,6 +6,7 @@ import logger from 'morgan';
 import path from 'path';
 
 import index from './routes/index';
+import confirmEmail from './routes/confirm-email';
 
 const app = express();
 const debug = Debug('passport-to-college-emails:app');
@@ -26,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/v/confirm-email', confirmEmail);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
