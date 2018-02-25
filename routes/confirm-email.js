@@ -9,7 +9,8 @@ export default {
   get: () => {
     return router.get('/', (req, res) => {
       res.render('emails/confirm-email-address/html', {
-        title: 'Confirm Email Address - Emails - Passport to College'
+        subject: 'Confirm Email Address - Emails - Passport to College',
+        uid: 'Hudheudh88374yrhuhfudfduh8'
       });
     });
   },
