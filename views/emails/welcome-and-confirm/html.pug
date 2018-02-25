@@ -1,0 +1,28 @@
+extends ../../layouts/default
+
+block colors
+  - color = "#FFCB61"
+  - colorLite = "#FFD889"
+
+block heroText
+  h1(style="font-size: 48px; font-weight: 400; margin: 0;") Welcome!
+
+block copy
+  p(style="margin: 0;")
+    | We're excited to have you get started on your Passport to College application. First, you need to confirm your account. Just press the button below.
+  
+block copyButton
+  - let link = `${process.env.URL_DEV}auth/confirm-email-address/${uid}`
+  if process.env.ENVIRONMENT === "production"
+    - link = `${process.env.URL_MAIN}auth/confirm-email-address/${uid}`
+
+  a(href= link, target="_blank", style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFCB61; display: inline-block;") Confirm Account
+
+block moreCopy
+  tr
+    td(bgcolor="#ffffff", align="left", style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;")
+      p(style="margin: 0;") If that doesn't work, copy and paste the following link in your browser:
+  tr
+    td(bgcolor="#ffffff", align="left", style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px; border-radius: 0px 0px 4px 4px;")
+      p(style="margin: 0;")
+        a(href= link, target="_blank", style="color: #FFA73B;")= link
