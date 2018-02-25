@@ -62,12 +62,17 @@ html(lang="en")
       }
 
       div[style*="margin: 16px 0;"] { margin: 0 !important; }
+  
   body(style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;")
+    block colors
+      - let color = "#FF6561";
+      - let colorLite = "#FF8C89"
+    
     div(style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;")
       block preheader
     table(border="0" cellpadding="0" cellspacing="0" width="100%")
       tr
-        td(bgcolor="#FF6561", align="center")
+        td(bgcolor= color, align="center")
           //if (gte mso 9)|(IE)
             table(align="center", border="0", cellspacing="0", cellpadding="0", width="600")
               tr
@@ -79,7 +84,7 @@ html(lang="en")
                   img(alt="Logo", src= `${process.env.URL}images/logo__text__white.png`, width="64", style="display: block; width: 96px; max-width: 96px; min-width: 96px; font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;", border="0")
           //if (gte mso 9)|(IE)
       tr
-        td(bgcolor="#FF6561", align="center", style="padding: 0px 10px 0px 10px;")
+        td(bgcolor= color, align="center", style="padding: 0px 10px 0px 10px;")
           //if (gte mso 9)|(IE)
             table(align="center", border="0", cellspacing="0", cellpadding="0", width="600")
               tr
@@ -108,7 +113,7 @@ html(lang="en")
                     td(bgcolor="#ffffff", align="center", style="padding: 20px 30px 60px 30px;")
                       table(border="0", cellspacing="0", cellpadding="0")
                         tr
-                          td(align="center", style="border-radius: 3px;", bgcolor="#FF6561")
+                          td(align="center", style="border-radius: 3px;", bgcolor= color)
                             block copyButton
           //if (gte mso 9)|(IE)
       block support
@@ -121,7 +126,7 @@ html(lang="en")
             table(border="0", cellpadding="0", cellspacing="0", width="100%", style="max-width: 600px;")
               // HEADLINE
               tr
-                td(bgcolor="#FF8C89", align="center", style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;")
+                td(bgcolor= colorLite, align="center", style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;")
                   h2(style="font-size: 20px; font-weight: 400; color: #333333; margin: 0;") Need more help?
                   p(style="margin: 0;")
                     a(href= `${process.env.URL_MAIN}contact`, target="_blank", style="color: #333; font-weight: bold;") We’re here, ready to talk

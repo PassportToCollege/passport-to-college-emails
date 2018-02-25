@@ -7,6 +7,7 @@ import path from 'path';
 
 import index from './routes/index';
 import confirmEmail from './routes/confirm-email';
+import resetPassword from './routes/reset-password';
 
 const app = express();
 const debug = Debug('passport-to-college-emails:app');
@@ -27,9 +28,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-
 app.use('/v/confirm-email', confirmEmail.get());
 app.use('/s/confirm-email', confirmEmail.send());
+app.use('/v/reset-password', resetPassword.get());
+app.use('/s/reset-password', resetPassword.send());
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
