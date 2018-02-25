@@ -1,4 +1,7 @@
 extends layout
 
 block content
-  
+  h1 Emails
+  ul
+    li: a(href="v/confirm-email") Confirm Email - View
+    li: a(href=`s/confirm-email/${process.env.UID}`) Confirm Email - Send
