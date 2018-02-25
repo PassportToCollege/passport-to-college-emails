@@ -12,5 +12,6 @@
   },
   "rules": {
     "comma-dangle": 0,
+    "arrow-body-style": ["error", "always"]
   }
 }
