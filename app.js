@@ -27,7 +27,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/v/confirm-email', confirmEmail);
+
+app.use('/v/confirm-email', confirmEmail.get());
+app.use('/s/confirm-email', confirmEmail.send());
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
