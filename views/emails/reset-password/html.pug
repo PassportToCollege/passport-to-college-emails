@@ -12,8 +12,8 @@ block copy
     | Resetting your password is easy. Just press the button below and follow the instructions. We'll have you up and running in no time.
   
 block copyButton
-  - let link = `${process.env.URL_DEV}auth/reset-password/${uid}`
+  - let link = `${process.env.URL_DEV}/auth/reset-password/${uid}`
   if process.env.ENVIRONMENT === "production"
-    - link = `${process.env.URL_MAIN}auth/reset-password/${uid}`
+    - link = `${process.env.URL_MAIN}/auth/reset-password/${uid}`
 
   a(href= link, target="_blank", style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #11A5AC; display: inline-block;") Reset Password

@@ -8,8 +8,8 @@ block copy
     | Confirming your email address is easy. Just press the button below. We'll have you up and running in no time.
   
 block copyButton
-  - let link = `${process.env.URL_DEV}auth/confirm-email-address/${uid}`
+  - let link = `${process.env.URL_DEV}/auth/confirm-email-address/${uid}`
   if process.env.ENVIRONMENT === "production"
-    - link = `${process.env.URL_MAIN}auth/confirm-email-address/${uid}`
+    - link = `${process.env.URL_MAIN}/auth/confirm-email-address/${uid}`
 
   a(href= link, target="_blank", style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FF6561; display: inline-block;") Confirm Email

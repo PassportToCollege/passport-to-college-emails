@@ -34,16 +34,16 @@ export default {
                 uid: req.params.uid
               }
             }).then((info) => {
-              res.send(info);
+              res.json(info);
             }).catch((error) => {
-              res.send(error);
+              res.json(error);
             });
           } else {
-            res.send('no user found');
+            res.json({ error: 'no user found' });
           }
         })
         .catch((error) => {
-          res.send(error);
+          res.json(error);
         });
     });
   }

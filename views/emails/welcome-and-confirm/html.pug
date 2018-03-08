@@ -12,9 +12,9 @@ block copy
     | We're excited to have you get started on your Passport to College application. First, you need to confirm your account. Just press the button below.
   
 block copyButton
-  - let link = `${process.env.URL_DEV}auth/confirm-email-address/${uid}`
+  - let link = `${process.env.URL_DEV}/auth/confirm-email-address/${uid}`
   if process.env.ENVIRONMENT === "production"
-    - link = `${process.env.URL_MAIN}auth/confirm-email-address/${uid}`
+    - link = `${process.env.URL_MAIN}/auth/confirm-email-address/${uid}`
 
   a(href= link, target="_blank", style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFCB61; display: inline-block;") Confirm Account
 
