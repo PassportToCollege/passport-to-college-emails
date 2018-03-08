@@ -9,6 +9,8 @@ import index from './routes/index';
 import confirmEmail from './routes/confirm-email';
 import resetPassword from './routes/reset-password';
 import welcome from './routes/welcome-and-confirm';
+import applicationSubmitted from './routes/application-submitted-applicant';
+import applicationReceived from './routes/application-submitted-admins';
 
 const app = express();
 const debug = Debug('passport-to-college-emails:app');
@@ -41,7 +43,11 @@ app.use('/s/confirm-email', confirmEmail.send());
 app.use('/v/reset-password', resetPassword.get());
 app.use('/s/reset-password', resetPassword.send());
 app.use('/v/welcome', welcome.get());
-app.use('/s/welcome/', welcome.send());
+app.use('/s/welcome', welcome.send());
+app.use('/v/application-submitted', applicationSubmitted.get());
+app.use('/s/application-submitted', applicationSubmitted.send());
+app.use('/v/application-received', applicationReceived.get());
+app.use('/s/application-received', applicationReceived.send());
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

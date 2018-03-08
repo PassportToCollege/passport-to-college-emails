@@ -1,0 +1,20 @@
+extends ../../layouts/default
+
+block colors
+  - color = "#11A5AC"
+  - colorLite = "#7DE2E7"
+
+block heroText
+  h1(style="font-size: 48px; font-weight: 400; margin: 0;") Step one complete.
+
+block copy
+  p(style="margin: 0;")
+    | Congratulations! You have successfully submitted your application to Passport to College. We will now review
+    | your application and get back to you as soon as possible with our decision.
+
+block copyButton
+  - let link = `${process.env.URL_DEV}/apply/p/${uid}`
+  if process.env.ENVIRONMENT === "production"
+    - link = `${process.env.URL_MAIN}/apply/p/${uid}`
+
+  a(href= link, target="_blank", style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #11A5AC; display: inline-block;") View Application
