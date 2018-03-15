@@ -17,7 +17,7 @@ export default {
 
   send: () => {
     return router.get('/:uid', (req, res) => {
-      db.collection('user')
+      db.collection('users')
         .where('isAdmin', '==', true)
         .get()
         .then((docs) => {
