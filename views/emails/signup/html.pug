@@ -1,0 +1,28 @@
+extends ../../layouts/default
+
+block colors
+  - color = "#FFCB61"
+  - colorLite = "#FFD889"
+
+block heroText
+  h1(style="font-size: 48px; font-weight: 400; margin: 0;") Welcome!
+
+block copy
+  p(style="margin: 0;")
+    | Your Passport to College user account has been created. Completing the signup process is easy, just click the button below:
+  
+block copyButton
+  - let link = `${process.env.URL_DEV}/auth/sign-up/${uid}`
+  if process.env.ENVIRONMENT === "production"
+    - link = `${process.env.URL_MAIN}/auth/sign-up/${uid}`
+
+  a(href= link, target="_blank", style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFCB61; display: inline-block;") Complete Signup
+
+block moreCopy
+  tr
+    td(bgcolor="#ffffff", align="left", style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;")
+      p(style="margin: 0;") If that doesn't work, copy and paste the following link in your browser:
+  tr
+    td(bgcolor="#ffffff", align="left", style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px; border-radius: 0px 0px 4px 4px;")
+      p(style="margin: 0;")
+        a(href= link, target="_blank", style="color: #FFA73B; overflow-wrap: break-word; word-wrap: break-word; word-break: break-all;")= link
