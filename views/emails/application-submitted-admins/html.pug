@@ -13,9 +13,9 @@ block copy
     | the application.
 
 block copyButton
-  - let link = `${process.env.URL_DEV}/admin/dashboard/applications/${uid}`
+  - let link = `${process.env.URL_DEV}/admin/dashboard/applications/view/${uid}`
   if process.env.ENVIRONMENT === "production"
-    - link = `${process.env.URL_MAIN}/admin/dashboard/applications/${uid}`
+    - link = `${process.env.URL_MAIN}/admin/dashboard/applications/view/${uid}`
 
   a(href= link, target="_blank", style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #11A5AC; display: inline-block;") View Application
 
