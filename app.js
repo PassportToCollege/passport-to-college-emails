@@ -12,6 +12,7 @@ import welcome from './routes/welcome-and-confirm';
 import applicationSubmitted from './routes/application-submitted-applicant';
 import applicationReceived from './routes/application-submitted-admins';
 import signup from './routes/signup';
+import acceptApplication from './routes/accept-application';
 
 const app = express();
 const debug = Debug('passport-to-college-emails:app');
@@ -51,6 +52,8 @@ app.use('/v/application-received', applicationReceived.get());
 app.use('/s/application-received', applicationReceived.send());
 app.use('/v/signup', signup.get());
 app.use('/s/signup', signup.send());
+app.use('/v/accept-application', acceptApplication.get());
+app.use('/s/accept-application', acceptApplication.send());
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

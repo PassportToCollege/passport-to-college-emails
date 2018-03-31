@@ -1,0 +1,32 @@
+extends ../../layouts/default
+
+block colors
+  - color = "#11A5AC"
+  - colorLite = "#7DE2E7"
+
+block heroText
+  h1(style="font-size: 48px; font-weight: 400; margin: 0;") Yes!
+
+block copy
+  p(style="margin: 0;")
+    | After reviewing your application, we concluded that you meet the financial, academic, and character requirements of a Passport to College scholar. Therefore we will move forward and work with you.
+
+  p(style="margin-top: 10px;")
+    | Your application portal will be used to track your progress moving forward. Use the link below to access it:
+
+block copyButton
+  - let link = `${process.env.URL_DEV}/apply/p/${uid}`
+  if process.env.ENVIRONMENT === "production"
+    - link = `${process.env.URL_MAIN}/apply/p/${uid}`
+
+  a(href= link, target="_blank", style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #11A5AC; display: inline-block;")
+    | Go To App Portal
+
+block moreCopy
+  tr
+    td(bgcolor="#ffffff", align="left", style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;")
+      p(style="margin: 0;") If that doesn't work, copy and paste the following link in your browser:
+  tr
+    td(bgcolor="#ffffff", align="left", style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px; border-radius: 0px 0px 4px 4px;")
+      p(style="margin: 0;")
+        a(href= link, target="_blank", style="color: #7DE2E7; overflow-wrap: break-word; word-wrap: break-word; word-break: break-all;")= link
