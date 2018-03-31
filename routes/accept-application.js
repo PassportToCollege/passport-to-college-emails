@@ -31,6 +31,7 @@ export default {
                 subject: 'Congratulations! Your Passport to College Application was Accepted'
               },
               locals: {
+                uid: req.params.uid,
                 user
               }
             }).then((info) => {
