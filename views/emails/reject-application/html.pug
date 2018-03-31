@@ -1,0 +1,20 @@
+extends ../../layouts/default
+
+block heroText
+  h1(style="font-size: 48px; font-weight: 400; margin: 0;") 😔
+
+block copy
+  p(style="margin: 0;")
+    | After carefully reviewing your application, we have decided to not move forward with your application to Passport to College.
+
+  p(style="margin-top: 10px;")
+    | As you would imagine, this decision was a hard one for us. The quantity and quality of applications we receive makes choosing students to work with very diffcult. However, we wish you the best in your future studies and we are rooting for you.
+
+block copyButtonBlock
+
+block moreCopy
+  if message
+    tr
+      td(bgcolor="#ffffff", align="left", style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;")
+        span(style="font-style: italic; opacity: 0.85") Note from application reviewer:
+        p(style="margin: 0 0 30px;")= message
