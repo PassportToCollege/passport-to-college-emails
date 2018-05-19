@@ -81,7 +81,7 @@ html(lang="en")
             tr
               td(align="center", valign="top", style="padding: 40px 10px 40px 10px;")
                 a(href= `${process.env.URL_MAIN}`, target="_blank")
-                  img(alt="Logo", src= `${process.env.URL}/images/logo__text__white.png`, width="64", style="display: block; width: 128px; max-width: 128px; min-width: 128px; font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;", border="0")
+                  img(alt="Logo", src="/images/logo__text__white.png", width="64", style="display: block; width: 128px; max-width: 128px; min-width: 128px; font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;", border="0")
           //if (gte mso 9)|(IE)
       tr
         td(bgcolor= color, align="center", style="padding: 0px 10px 0px 10px;")
@@ -154,7 +154,7 @@ html(lang="en")
               td(bgcolor="#f4f4f4", align="left", style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;")
                 p(style="margin: 0;")
                   | If these emails get annoying, please feel free to 
-                  a(href= `${process.env.URL}unsubscribe`, target="_blank", style="color: #111111; font-weight: 700;") unsubscribe
+                  a(href="/unsubscribe", target="_blank", style="color: #111111; font-weight: 700;") unsubscribe
                   | .
             // ADDRESS
             tr
