@@ -4,6 +4,7 @@ import EmailTransporter from '../lib/email';
 import { db } from '../lib/firebase';
 
 const router = express.Router();
+const Console = console;
 
 export default {
   get: () => {
@@ -34,15 +35,19 @@ export default {
                 uid: req.params.uid
               }
             }).then((info) => {
+              Console.log(info);
               res.send(info);
             }).catch((error) => {
+              Console.log(error);
               res.send(error);
             });
           } else {
+            Console.log('No user found');
             res.send('no user found');
           }
         })
         .catch((error) => {
+          Console.log(error);
           res.send(error);
         });
     });
