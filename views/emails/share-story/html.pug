@@ -1,0 +1,28 @@
+extends ../../layouts/default
+
+block colors
+  - color = "#11A5AC"
+  - colorLite = "#7DE2E7"
+
+block heroText
+  h1(style="font-size: 48px; font-weight: 400; margin: 0;")= `${sharedBy} Shared This Awesome Story With You!`
+
+block copy
+  h3= title
+  p(style="margin: 0;")= excerpt
+
+block copyButton
+  - let link = `${process.env.URL_DEV}/stories/read/${post_id}`
+  if process.env.ENVIRONMENT === "production"
+    - link = `${process.env.URL_MAIN}/stories/read/${post_id}`
+
+  a(href= link, target="_blank", style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #11A5AC; display: inline-block;") Continue Reading
+
+block moreCopy
+  tr
+    td(bgcolor="#ffffff", align="left", style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;")
+      p(style="margin: 0;") If that doesn't work, copy and paste the following link in your browser:
+  tr
+    td(bgcolor="#ffffff", align="left", style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px; border-radius: 0px 0px 4px 4px;")
+      p(style="margin: 0;")
+        a(href= link, target="_blank", style="color: #11A5AC; overflow-wrap: break-word; word-wrap: break-word; word-break: break-all;")= link

@@ -14,6 +14,7 @@ import applicationReceived from './routes/application-submitted-admins';
 import signup from './routes/signup';
 import acceptApplication from './routes/accept-application';
 import rejectApplication from './routes/reject-application';
+import shareStory from './routes/share-story';
 
 const app = express();
 const debug = Debug('passport-to-college-emails:app');
@@ -57,6 +58,8 @@ app.use('/v/accept-application', acceptApplication.get());
 app.use('/s/accept-application', acceptApplication.send());
 app.use('/v/reject-application', rejectApplication.get());
 app.use('/s/reject-application', rejectApplication.send());
+app.use('/v/share-story', shareStory.get());
+app.use('/s/share-story', shareStory.send());
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
